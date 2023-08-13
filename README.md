@@ -90,19 +90,3 @@ Spring Batch, Spock
 ### 조선대학교 컴퓨터 공학과
 
 - ICPC : International Collegiate Programming Contest) 주최 교내 팀 알고리즘 대회 은상 수상
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div><h2>About Me!</h2></div>
-
-<div color=mint><h1>About Me!</h1></div>

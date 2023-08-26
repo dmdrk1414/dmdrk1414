@@ -76,6 +76,19 @@ Spring Batch, Spock
 - Jira & Wiki Confluence
 - Upsurge
 
+#### docker
+
+- 마운트기능 사용해보기
+
+### 배포
+
+- 무중단 배포 공부해서 적용해보기
+- Spring Boot Relaxed Binding
+
+
+
+- Reverse Proxy Server로 활용 → WAS 서버의 부하를 줄일 수 있는 로드 밸런서로 활용 (공부)
+
 ### 🏃Projects
 
 #### NCT (Nuri Control Tower)

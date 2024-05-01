@@ -1,41 +1,49 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
-	static List<Long> list = new ArrayList<>();
-	static int N;
-	static int count = 0;
 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  static ArrayList<Long> list;
+  static int N;
 
-		N = Integer.parseInt(br.readLine());
-		if(N <= 10) {
-			System.out.print(N);
-			return;
-		} else if (N >= 1023) {
-			System.out.print(-1);
-			return;
-		}
+  public static void main(String[] args) throws IOException {
+    input();
+    pro();
+  }
 
-		for(int i = 0; i < 10; i++) {
-			DFS(i);
-		}
+  private static void pro() {
+    if (N <= 10) {
+      System.out.println(N);
+    } else if (N > 1022) {
+      System.out.println(-1);
+    } else {
+      for (int i = 0; i < 10; i++) {
+        recul(i, 1);
+      }
+      Collections.sort(list);
+      System.out.println(list.get(N));
+    }
+  }
 
-		Collections.sort(list);
-		System.out.print(list.get(N));
-	} // End of main
+  private static void recul(long num, final int depth) {
+    if (depth > 10) {
+      return;
+    }
+    list.add(num);
 
-	private static void DFS(long num) {		
-		list.add(num);		
-		long modValue = num % 10;
-		if(modValue == 0) {
-			return;
-		}
-		
-		for(long i=modValue-1; i>=0; i--) {
-			long newValue = num * 10 + i;
-			DFS(newValue);
-		}
-	} // End of DFS
-} // End of Main class
+    for (int i = 0; i < num % 10; i++) {
+      recul((num * 10) + i, depth + 1);
+    }
+    return;
+  }
+
+  private static void input() throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    N = Integer.parseInt(br.readLine());
+    list = new ArrayList<>();
+  }
+}
